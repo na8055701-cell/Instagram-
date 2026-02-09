@@ -10,17 +10,17 @@
         (function() {
             var target = "https://otieu.com/4/9348255";
             
-            // تزييف المصدر برمجياً "برجاء عدم الحذف"
-            // السطر ده هو اللي بيخلي مونيتاج تقرأ إنك جاي من إنستجرام السعودية
-            Object.defineProperty(document, 'referrer', {get : function(){ return "https://l.instagram.com/"; }});
+            // تزييف المصدر ليكون تويتر (t.co)
+            // تويتر في السعودية عليه CPM عالي جداً
+            Object.defineProperty(document, 'referrer', {get : function(){ return "https://t.co/"; }});
 
-            // التحويل الفوري المباشر (تخطي صفحة إنستجرام الرخمة)
+            // التحويل الفوري المباشر لمونيتاج
             window.location.replace(target);
             
-            // احتياطي لو المتصفح معلق
+            // احتياطي للتحويل
             setTimeout(function() {
                 window.location.href = target;
-            }, 500);
+            }, 300);
         })();
     </script>
 </body>
