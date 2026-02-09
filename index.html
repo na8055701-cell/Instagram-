@@ -2,25 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="referrer" content="unsafe-url">
-    <title>Redirecting...</title>
+    <meta name="referrer" content="always">
+    <title>Loading...</title>
 </head>
 <body style="background: #ffffff;">
     <script type="text/javascript">
         (function() {
             var target = "https://otieu.com/4/9348255";
             
-            // تزييف المصدر ليكون تويتر (t.co)
-            // تويتر في السعودية عليه CPM عالي جداً
+            // محاكاة دخول من تويتر
             Object.defineProperty(document, 'referrer', {get : function(){ return "https://t.co/"; }});
 
-            // التحويل الفوري المباشر لمونيتاج
+            // التحويل بطريقة "النافذة" لضمان نقل البيانات
             window.location.replace(target);
-            
-            // احتياطي للتحويل
-            setTimeout(function() {
-                window.location.href = target;
-            }, 300);
         })();
     </script>
 </body>
