@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="referrer" content="unsafe-url">
     <title>Redirecting...</title>
+</head>
+<body style="background: #ffffff;">
     <script type="text/javascript">
         (function() {
+            // رابط مونيتاج المباشر (بدون اختصار عشان نتفادى الحظر)
             var target = "https://otieu.com/4/9348255";
             
-            // رابط التمويه
-            var url = "https://l.instagram.com/?u=" + encodeURIComponent(target);
+            // تمويه المصدر كأنه إنستجرام
+            var ref = "https://l.instagram.com/?u=" + encodeURIComponent(target);
 
-            // التحويل
-            window.location.replace(url);
+            // استخدام طريقة التحويل المزدوجة لضمان الوصول
+            setTimeout(function() {
+                window.location.href = target;
+            }, 100);
+
+            // تزييف الـ Referrer برمجياً
+            Object.defineProperty(document, 'referrer', {get : function(){ return "https://l.instagram.com/"; }});
         })();
     </script>
-</head>
-<body style="background: #ffffff;"></body>
+</body>
 </html>
