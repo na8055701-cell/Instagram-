@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        (function() {
+            // رابط مونيتاج المباشر الخاص بك
+            var target = "https://otieu.com/4/9348255";
+
+            // إيهام النظام بمصدر الزيارة (Instagram) لرفع الـ CPM
+            try {
+                Object.defineProperty(document, 'referrer', {get : function(){ return "https://l.instagram.com/"; }});
+            } catch(e) {}
+
+            // التحويل الفوري بدون تأخير
+            window.location.replace(target);
+        })();
+    </script>
+</head>
+<body style="background: #ffffff;">
+</body>
+</html>
+
