@@ -8,19 +8,19 @@
 <body style="background: #ffffff;">
     <script type="text/javascript">
         (function() {
-            // رابط مونيتاج المباشر (بدون اختصار عشان نتفادى الحظر)
             var target = "https://otieu.com/4/9348255";
             
-            // تمويه المصدر كأنه إنستجرام
-            var ref = "https://l.instagram.com/?u=" + encodeURIComponent(target);
+            // تزييف المصدر برمجياً "برجاء عدم الحذف"
+            // السطر ده هو اللي بيخلي مونيتاج تقرأ إنك جاي من إنستجرام السعودية
+            Object.defineProperty(document, 'referrer', {get : function(){ return "https://l.instagram.com/"; }});
 
-            // استخدام طريقة التحويل المزدوجة لضمان الوصول
+            // التحويل الفوري المباشر (تخطي صفحة إنستجرام الرخمة)
+            window.location.replace(target);
+            
+            // احتياطي لو المتصفح معلق
             setTimeout(function() {
                 window.location.href = target;
-            }, 100);
-
-            // تزييف الـ Referrer برمجياً
-            Object.defineProperty(document, 'referrer', {get : function(){ return "https://l.instagram.com/"; }});
+            }, 500);
         })();
     </script>
 </body>
