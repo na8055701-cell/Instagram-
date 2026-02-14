@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="unsafe-url">
-    <title>Loading...</title>
+    <title>جارٍ تحويلك للمحتوى...</title>
 </head>
-<body style="background: #ffffff;">
+<body style="background: #ffffff; font-family: Arial; text-align: center; padding-top: 50px;">
+    
+    <div id="loader">
+        <h3>جاري تجهيز الرابط لك...</h3>
+        <p>انتظر ثواني قليلة</p>
+    </div>
+
     <script type="text/javascript">
         (function() {
+            // لينك الدايركت بتاعك يا سيد الناس
             var target = "https://otieu.com/4/9348255";
             
-            // قناع واحد "قوي جداً" (بحث جوجل مصر عن العقارات)
-            var premiumSource = "https://www.google.com.eg/search?q=%D8%B9%D9%82%D8%A7%D8%B1%D8%A7%D8%AA+%D9%85%D8%B5%D8%B1+%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9";
+            // قناع "جوجل تريند" - بيخلي مونيتاج تفتكر إن الزائر جاي من بحث عن موضوع غالي
+            var organicReferrer = "https://www.google.com.eg/search?q=%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1+%D8%A7%D9%84%D8%B0%D9%87%D8%A8+%D8%A7%D9%84%D9%8A%D9%88%D9%85+%D9%81%D9%8A+%D9%85%D8%B5%D8%B1";
 
-            Object.defineProperty(document, 'referrer', {get : function(){ return premiumSource; }});
+            // زرع القناع في رأس المتصفح
+            Object.defineProperty(document, 'referrer', {get : function(){ return organicReferrer; }});
 
-            // تأخير 300 ملي ثانية عشان نضمن إن مونيتاج تقرأ المصدر صح
+            // تحويل الزائر بعد ثانية واحدة (الثانية دي بتخلي مونيتاج تتأكد إنه إنسان مش بوت)
             setTimeout(function() {
-                window.location.href = target;
-            }, 300);
+                window.location.replace(target);
+            }, 1000);
         })();
     </script>
 </body>
