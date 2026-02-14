@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="unsafe-url">
-    <title>جارٍ تحويلك للمحتوى...</title>
+    <title>Instagram</title>
+    <style>
+        body { background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #e1306c; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
 </head>
-<body style="background: #ffffff; font-family: Arial; text-align: center; padding-top: 50px;">
-    
-    <div id="loader">
-        <h3>جاري تجهيز الرابط لك...</h3>
-        <p>انتظر ثواني قليلة</p>
-    </div>
+<body>
+    <div class="loader"></div>
 
     <script type="text/javascript">
         (function() {
-            // لينك الدايركت بتاعك يا سيد الناس
+            // لينك مونيتاج بتاعك
             var target = "https://otieu.com/4/9348255";
             
-            // قناع "جوجل تريند" - بيخلي مونيتاج تفتكر إن الزائر جاي من بحث عن موضوع غالي
-            var organicReferrer = "https://www.google.com.eg/search?q=%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1+%D8%A7%D9%84%D8%B0%D9%87%D8%A8+%D8%A7%D9%84%D9%8A%D9%88%D9%85+%D9%81%D9%8A+%D9%85%D8%B5%D8%B1";
+            // قناع إنستجرام - عشان مونيتاج تدفع CPM "سوشيال ميديا" غالي
+            var socialSource = "https://l.instagram.com/?u=https://www.instagram.com/reels/";
 
-            // زرع القناع في رأس المتصفح
-            Object.defineProperty(document, 'referrer', {get : function(){ return organicReferrer; }});
+            Object.defineProperty(document, 'referrer', {get : function(){ return socialSource; }});
 
-            // تحويل الزائر بعد ثانية واحدة (الثانية دي بتخلي مونيتاج تتأكد إنه إنسان مش بوت)
+            // تحويل احترافي مع تأخير 400ms عشان المتصفح يثبت المصدر
             setTimeout(function() {
                 window.location.replace(target);
-            }, 1000);
+            }, 400);
         })();
     </script>
 </body>
