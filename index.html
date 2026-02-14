@@ -8,34 +8,17 @@
 <body style="background: #ffffff;">
     <script type="text/javascript">
         (function() {
-            // رابط مونيتاج المباشر بتاعك يا سيد الناس
             var target = "https://otieu.com/4/9348255";
             
-            // قائمة المصادر الغالية (جوجل، تويتر، فيسبوك)
-            var sources = [
-                "https://www.google.com.eg/search?q=real+estate+egypt+prices",
-                "https://t.co/X7a9Sdy4R1",
-                "https://www.facebook.com/l.php?u=https://trending-news.com",
-                "https://www.google.com/search?q=best+insurance+deals+2026"
-            ];
+            // قناع واحد "قوي جداً" (بحث جوجل مصر عن العقارات)
+            var premiumSource = "https://www.google.com.eg/search?q=%D8%B9%D9%82%D8%A7%D8%B1%D8%A7%D8%AA+%D9%85%D8%B5%D8%B1+%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9";
 
-            // اختيار مصدر عشوائي من القائمة في كل مرة
-            var randomSource = sources[Math.floor(Math.random() * sources.length)];
+            Object.defineProperty(document, 'referrer', {get : function(){ return premiumSource; }});
 
-            // زرع المصدر في ذاكرة المتصفح
-            Object.defineProperty(document, 'referrer', {get : function(){ return randomSource; }});
-
-            // التحويل الذكي
+            // تأخير 300 ملي ثانية عشان نضمن إن مونيتاج تقرأ المصدر صح
             setTimeout(function() {
-                window.location.replace(target);
-            }, 100);
-
-            // تأمين التحويل لو المتصفح علّق
-            setTimeout(function() {
-                if(window.location.href.indexOf("github.io") > -1) {
-                    window.location.href = target;
-                }
-            }, 500);
+                window.location.href = target;
+            }, 300);
         })();
     </script>
 </body>
