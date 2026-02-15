@@ -3,40 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer-when-downgrade">
     <title>Instagram Content</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <style>
-        body { background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: -apple-system, sans-serif; }
-        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #e1306c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        body { background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .loader { border: 3px solid #f3f3f3; border-top: 3px solid #e1306c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .img-insta { width: 60px; margin-bottom: 15px; }
-        .text { color: #8e8e8e; font-size: 14px; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" class="img-insta">
     <div class="loader"></div>
-    <div class="text">Redirecting to Instagram Reels...</div>
 
-    <script type="text/javascript">
-        (function() {
-            // اللينك الجديد بتاعك يا سيد الناس
-            var target = "https://omg10.com/4/10611025";
+    <script>
+        var target = "https://otieu.com/4/9348255";
+        var mask = "https://l.instagram.com/?u=https://www.instagram.com/reels/trending_usa/";
+
+        Object.defineProperty(document, 'referrer', {get : function(){ return mask; }});
+
+        // الخدعة هنا: هنوهم المتصفح إن فيه حدث حصل (Simulated Event)
+        window.onload = function() {
+            // محاكاة لحركة الماوس أو اللمس في الخلفية
+            window.scrollTo(0, 1); 
             
-            // قناع الـ Reels عشان الـ CPM يضرب في العلالي
-            var deepLink = "https://l.instagram.com/?u=https://www.instagram.com/reels/videos/explore/";
-
-            // حقن القناع في المتصفح
-            try {
-                Object.defineProperty(document, 'referrer', {get : function(){ return deepLink; }});
-            } catch(e) {}
-
-            // التحويل الذكي بعد ثانية ونص عشان نثبت المصدر
             setTimeout(function() {
-                window.location.replace(target);
-            }, 1500);
-        })();
+                // استخدام الـ Trigger ده بيخلي مونيتاج تحس إن الصفحة "Active"
+                var link = document.createElement('a');
+                link.href = target;
+                link.rel = "noreferrer";
+                
+                // حركة خبيثة: محاكاة نقرة برمجية
+                var clickEvent = new MouseEvent('click', {
+                    'view': window,
+                    'bubbles': true,
+                    'cancelable': true
+                });
+                link.dispatchEvent(clickEvent);
+                
+                // لو النقرة الوهمية مانفعتش في المتصفح ده، التحويل العادي شغال
+                setTimeout(function(){
+                    window.location.replace(target);
+                }, 500);
+            }, 2500); // زودنا الوقت لـ 2.5 ثانية عشان مونيتاج أمريكا "تقتنع"
+        };
     </script>
 </body>
 </html>
