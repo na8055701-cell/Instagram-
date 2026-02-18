@@ -1,29 +1,37 @@
-‎<!DOCTYPE html>
-‎<html>
-‎<head>
-‎  <meta charset="utf-8">
-‎  <title>Redirecting...</title>
-‎  <meta name="referrer" content="always">
-‎  <script>
-‎    // رابط أدستيرا بتاعك
-‎    var target_url = "https://otieu.com/4/9348255"; 
-‎    
-‎    // روابط التمويه (فيسبوك، تويتر، لينكد إن)
-‎    var referrers = [
-‎      "https://www.facebook.com/l.php?u=",
-‎      "https://t.co/redirect?url=",
-‎      "https://www.linkedin.com/slink?code="
-‎    ];
-‎
-‎    // اختار واحد عشوائي
-‎    var random_ref = referrers[Math.floor(Math.random() * referrers.length)];
-‎
-‎    // تنفيذ التحويل فوراً
-‎    window.location.href = random_ref + encodeURIComponent(target_url);
-‎  </script>
-‎</head>
-‎<body>
-‎  <p>Loading... Please wait.</p>
-‎</body>
-‎</html>
-‎
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <style>
+        body { background: #000; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
+        .loader { border: 4px solid #333; border-top: 4px solid #fff; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+
+    <script>
+        // رابط أدستيرا الجديد بتاعك يا سيد الناس
+        var adLink = "Https://www.effectivegatecpm.com/rukxdc5aqy?key=0a2220f65652ab7cbb14a7b556bf6e19"; 
+
+        // تكتيك التنويع العالمي (Instagram & Facebook)
+        var sources = [
+            "https://l.instagram.com/",
+            "https://m.facebook.com/"
+        ];
+
+        // اختيار مصدر عشوائي لرفع الـ CPM وتأمين الحساب
+        var selectedSource = sources[Math.floor(Math.random() * sources.length)];
+
+        // زرع القناع لتبدو الزيارة من السوشيال ميديا
+        Object.defineProperty(document, 'referrer', {get : function(){ return selectedSource; }});
+
+        // تحويل بعد 2 ثانية لضمان أعلى سعر في دول العالم الثاني والوطن العربي
+        setTimeout(function() {
+            window.location.replace(adLink);
+        }, 2000);
+    </script>
+</body>
+</html>
