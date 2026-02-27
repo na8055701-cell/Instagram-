@@ -1,64 +1,19 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاري التحميل...</title>
     <meta name="referrer" content="no-referrer">
-    
-    <style>
-        body { background-color: #010101; color: white; margin: 0; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
-        .loader-container { text-align: center; }
-        .tiktok-loader { width: 50px; height: 50px; border: 5px solid #fe2c55; border-top: 5px solid #25f4ee; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .text { font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; }
-    </style>
+    <title>Loading...</title>
+    <script>
+        // هنا تحط رابط مونيتاج بتاعك يا سيد الناس
+        var target_url = "https://omg10.com/4/10623404";
+
+        window.onload = function() {
+            // تحويل فوري بدون انتظار
+            window.location.replace(target_url);
+        };
+    </script>
 </head>
-<body>
-
-<div class="loader-container">
-    <div class="tiktok-loader"></div>
-    <div class="text">تحميل المحتوى من TikTok...</div>
-</div>
-
-<script>
-    // 1. حط رابط أدستيرا أو مونيتاج بتاعك هنا يا سيد الناس
-    const directLink = "https://omg10.com/4/10623404";
-
-    // 2. دالة التحويل الذكي
-    function startHyperRedirect() {
-        // تمويه المصدر ليبدو كسوشيال ميديا
-        const socialReferrer = "https://www.tiktok.com/discover/trending";
-        
-        // تزوير "نقرة" برمجية لرفع الـ Quality Score في أدستيرا
-        const fakeClick = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true
-        });
-
-        // محاكاة التفاعل
-        document.body.dispatchEvent(fakeClick);
-
-        // التحويل النهائي بعد 1.8 ثانية (الوقت المثالي للـ CPM العالي)
-        setTimeout(() => {
-            // استخدام replace لمسح رابط جيت هاب من تاريخ المتصفح
-            window.location.replace(directLink);
-        }, 1800);
-    }
-
-    // تشغيل السحر فور تحميل الصفحة
-    window.onload = () => {
-        // محاكاة حركات الماوس/اللمس لزيادة التفاعل الوهمي
-        window.scrollTo(0, 1);
-        startHyperRedirect();
-    };
-
-    // حماية إضافية: لو الزائر حاول يقفل الصفحة، حوله فوراً
-    window.onbeforeunload = function() {
-        window.location.replace(directLink);
-    };
-</script>
-
-</body>
+<body style="background-color: white;">
+    </body>
 </html>
