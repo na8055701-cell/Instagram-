@@ -1,19 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="referrer" content="no-referrer">
-    <title>Loading...</title>
-    <script>
-        // هنا تحط رابط مونيتاج بتاعك يا سيد الناس
-        var target_url = "https://safeoffers.pro/a/rWDQfmGZsyv1N";
-
-        window.onload = function() {
-            // تحويل فوري بدون انتظار
-            window.location.replace(target_url);
-        };
-    </script>
-</head>
-<body style="background-color: white;">
-    </body>
-</html>
+‎<!DOCTYPE html>
+‎<html>
+‎<head>
+‎    <meta charset="UTF-8">
+‎    <title>Redirecting...</title>
+‎    
+‎    <meta name="referrer" content="no-referrer">
+‎
+‎    <script type="text/javascript">
+‎        // 1. حط رابط الشركة أو الرابط المباشر بتاعك هنا
+‎        var direct_link = "https://omg10.com/4/10623404"; 
+‎
+‎        // 2. رابط وسيط من فيسبوك عشان نوهمهم إن الزيارة جاية من هناك
+‎        var facebook_ref = "https://l.facebook.com/l.php?u=" + encodeURIComponent(direct_link);
+‎
+‎        // 3. وظيفة التحويل المزدوج لضمان تغيير الـ Referrer
+‎        function redirect() {
+‎            window.location.replace(facebook_ref);
+‎        }
+‎
+‎        // تنفيذ التحويل بعد 100 مللي ثانية (لحظي)
+‎        setTimeout(redirect, 100);
+‎    </script>
+‎</head>
+‎<body>
+‎    <div style="text-align: center; margin-top: 50px; font-family: Arial;">
+‎        <p>جاري التحويل بأمان...</p>
+‎        <noscript>
+‎            <meta http-equiv="refresh" content="0;url=https://l.facebook.com/l.php?u=YOUR_URL_HERE">
+‎        </noscript>
+‎    </div>
+‎</body>
+‎</html>
+‎
